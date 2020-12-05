@@ -1,12 +1,12 @@
 const formatString = function (string) {
-  const charactersFromString = string.split('');
-
-  if (charactersFromString.length > 40) {
-    const charactersFromStringSplice = charactersFromString.splice(40);
-    charactersFromString.push('...');
+  if (string.length > 40) {
+    const characters = string.split('');
+    characters.splice(40);
+    characters.push('...');
+    return characters.join('');
   }
 
-  return charactersFromString.join('');
+  return string;
 };
 
 console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
