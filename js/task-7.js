@@ -2,24 +2,13 @@ const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
 let message = '';
 
 const isLoginValid = function (login) {
-  let isValidLogin = true;
-  
-  if (login.length < 4 || login.length > 16) {
-    isValidLogin = false;
-  }
-  
-  return isValidLogin;
+  return !(login.length < 4 || login.length > 16);
 };
 
 const isLoginUnique = function (allLogins, login) {
-  let issaValidLogin = true;
-  
-  for (const anyLogin of allLogins) {
-    if (login === anyLogin) {
-      issaValidLogin = false;
-    };
+ for (const anyLogin of allLogins) {
+    return !(login === anyLogin);
   };
-  return issaValidLogin;
 };
 
 const addLogin = function (allLogins, login) {

@@ -1,13 +1,7 @@
+const maxLength = 40;
 const formatString = function (string) {
-  if (string.length > 40) {
-    const characters = string.split('');
-    characters.splice(40);
-    characters.push('...');
-    return characters.join('');
-  }
-
-  return string;
-};
+  return string <= maxLength ? string : string.slice(0, maxLength) + '...';
+}
 
 console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
 // вернется оригинальная строка
